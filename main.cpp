@@ -1,16 +1,15 @@
 /******************************************************************************
 # Author:           Lucy Price
-# Assignment:       Assignment 4 - Phrases and Subphrases program
-# Date:             April 30, 2026
-# Description:      This program will take string inputs from the user and
-#                   output whether or not phrase 1 was found in phrase 2 or
-#                   the other way around. It will also say if the phrases
-#                   match, or do not match. It will then print the phrase
-#                   that matches, and where it starts in the other phrase.
-# Input:            phrase1 and phrase2 as strings.
-# Output:           phrase1 and phrase2 as strings.
-# Sources:          Assignement 4 resources, recorded zoom of class and
-#                   zybooks, chapter 4 section 4.12.
+# Assignment:       Midterm Exam - Rock Collector Championship
+# Date:             May 6, 2026
+# Description:      This program will calculate the first, second, third place
+#                   winners, as well as any ties from three participants and
+#                   how many rocks each person collected. It will also calculate
+#                   the average number of rocks collected.
+# Input:            player1, player2, and player3 as strings, and rocks1, rocks2,
+#                   and rocks3 as ints.
+# Output:           avgRocks as double.
+# Sources:          Midterm exam resources, and zybooks up to conditionals II.
 #******************************************************************************/
 #include <iostream>
 #include <string>
@@ -29,7 +28,7 @@ int main() {
   int rocks1 = 0;
   int rocks2 = 0;
   int rocks3 = 0;
-  string result;
+
   //welcome message
   cout << "Welcome to the Rock Collector Championships!" << endl;
   //player 1
