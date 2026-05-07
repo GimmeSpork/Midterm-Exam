@@ -141,6 +141,5 @@ int main() {
   //goodbye message
   cout << "\nCongratulations Rock Collectors!" << endl;
 
-
   return 0;
 }
