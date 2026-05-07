@@ -65,44 +65,71 @@ int main() {
   }
 
   //calculations and winners
-  //first place
-  if (rocks1 > rocks2 && rocks1 > rocks3) {
-    cout << "\n" << player1 << " is in first place!" << endl;
-  }else if (rocks2 > rocks1 && rocks2 > rocks3) {
-    cout << "\n" << player2 << " is in first place!" << endl;
-  }else if (rocks3 > rocks1 && rocks3 > rocks2) {
-    cout << "\n" << player3 << " is in first place!" << endl;
-  }else if (rocks1 == rocks2 && rocks1 > rocks3) {
-    cout << "\n" << player1 << " and " << player2 << " are tied for first!." << endl;
-  }else if (rocks1 == rocks3 && rocks1 > rocks2) {
-    cout << "\n" << player1 << " and " << player3 << " are tied for first!." << endl;
-  }else if (rocks2 == rocks3 && rocks2 > rocks1) {
-    cout << "\n" << player2 << " and " << player3 << " are tied for first!." << endl;
-  }else if (rocks1 == rocks2 && rocks1 == rocks3) {
+  //3 way tie
+  if (rocks1 == rocks2 && rocks2 == rocks3) {
     cout << "\nIt's a three way tie!" << endl;
+  } 
+  //1st place ties
+  else if (rocks1 == rocks2 && rocks1 > rocks3) {
+    cout << "\n" << player1 << " and " << player2 << " are tied for first!" << endl;
+    cout << player3 << " is in second place!" << endl;
+  }
+  else if (rocks2 == rocks3 && rocks2 > rocks1) {
+    cout << "\n" << player2 << " and " << player3 << " are tied for first!" << endl;
+    cout << player1 << " is in second place!" << endl;
+  }
+  else if (rocks1 == rocks3 && rocks1 > rocks2) {
+    cout << "\n" << player1 << " and " << player3 << " are tied for first!" << endl;
+    cout << player2 << " is in second place!" << endl;
   }
 
-  //second place
-  if ((rocks1 >= rocks2 && rocks1 <= rocks3) || (rocks1 <= rocks2 && rocks1 >= rocks3)) {
-    cout << player1 << " is in second place!" << endl;
-  }else if ((rocks2 >= rocks1 && rocks2 <= rocks3) || (rocks2 <= rocks1 && rocks2 >= rocks3)) {
-    cout << player2 << " is in second place!" << endl;
-  }else if ((rocks3 >= rocks2 && rocks3 <= rocks1) || (rocks3 <= rocks2 && rocks3 >= rocks1)) {
-    cout << player3 << " is in second place!" << endl;
-  }else if (rocks1 == rocks2 && rocks1 < rocks3) {
-    cout << player1 << " and " << player2 << " are tied for second place!" << endl;
-  }else if (rocks1 == rocks3 && rocks1 < rocks2) {
-    cout << player1 << " and " << player3 << " are tied for second place!" << endl;
-  }else if (rocks2 == rocks3 && rocks2 < rocks1) {
-    cout << player2 << " and " << player3 << " are tied for second place!" << endl;
+  //2nd place ties
+  else if (rocks1 > rocks2 && rocks2 == rocks3) {
+    cout << "\n" << player2 << " and " << player3 << " are tied for second!" << endl;
   }
-  
-  if (rocks1 < rocks2 && rocks1 < rocks3) {
-    cout << player1 << " is in third place!" << endl;
-  }else if (rocks2 < rocks1 && rocks2 < rocks3) {
-    cout << player2 << " is in third place!" << endl;
-  }else if (rocks3 < rocks1 && rocks3 < rocks2) {
-    cout << player3 << " is in third place!" << endl;
+  else if (rocks2 > rocks1 && rocks3 == rocks1) {
+    cout << "\n" << player1 << " and " << player3 << " are tied for second!" << endl;
+  }
+  else if (rocks3 > rocks1 && rocks1 == rocks2) {
+    cout << "\n" << player1 << " and " << player2 << " are tied for second!" << endl;
+  }
+
+  //regular places
+  //player 1 in first
+  else if (rocks1 > rocks2 && rocks1 > rocks3) {
+    cout << "\n" << player1 << " is in first place!" << endl;
+      if (rocks2 > rocks3) {
+        cout << player2 << " is in second place!" << endl;
+        cout << player3 << " is in third place!" << endl;
+      }
+      else {
+        cout << player3 << " is in second place!" << endl;
+        cout << player2 << " is in second place!" << endl;
+      }
+  }
+  //player 2 in first
+   else if (rocks2 > rocks1 && rocks2 > rocks3) {
+    cout << "\n" << player2 << " is in first place!" << endl;
+      if (rocks1 > rocks3) {
+        cout << player1 << " is in second place!" << endl;
+        cout << player3 << " is in third place!" << endl;
+      }
+      else {
+        cout << player3 << " is in second place!" << endl;
+        cout << player1 << " is in third place!" << endl;
+      }
+  }
+  //player 3 in first
+   else if (rocks3 > rocks1 && rocks3 > rocks2) {
+    cout << "\n" << player3 << " is in first place!" << endl;
+      if (rocks2 > rocks1) {
+        cout << player2 << " is in second place!" << endl;
+        cout << player1 << " is in third place!" << endl;
+      }
+      else {
+        cout << player1 << " is in second place!" << endl;
+        cout << player2 << " is in third place!" << endl;
+      }
   }
   
   //calculations for rock average as double
