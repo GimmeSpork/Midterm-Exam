@@ -29,7 +29,7 @@ int main() {
   int rocks1 = 0;
   int rocks2 = 0;
   int rocks3 = 0;
-
+  string result;
   //welcome message
   cout << "Welcome to the Rock Collector Championships!" << endl;
   //player 1
@@ -83,11 +83,11 @@ int main() {
   }
 
   //second place
-  if ((rocks1 > rocks2 && rocks1 < rocks3) || (rocks1 > rocks3 && rocks1 < rocks2)) {
+  if ((rocks1 >= rocks2 && rocks1 <= rocks3) || (rocks1 <= rocks2 && rocks1 >= rocks3)) {
     cout << player1 << " is in second place!" << endl;
-  }else if ((rocks2 > rocks1 && rocks2 < rocks3) || (rocks2 > rocks3 && rocks2 < rocks1)) {
+  }else if ((rocks2 >= rocks1 && rocks2 <= rocks3) || (rocks2 <= rocks1 && rocks2 >= rocks3)) {
     cout << player2 << " is in second place!" << endl;
-  }else if ((rocks3 > rocks1 && rocks3 < rocks2) || (rocks3 < rocks1 && rocks3 > rocks2)) {
+  }else if ((rocks3 >= rocks2 && rocks3 <= rocks1) || (rocks3 <= rocks2 && rocks3 >= rocks1)) {
     cout << player3 << " is in second place!" << endl;
   }else if (rocks1 == rocks2 && rocks1 < rocks3) {
     cout << player1 << " and " << player2 << " are tied for second place!" << endl;
@@ -96,8 +96,7 @@ int main() {
   }else if (rocks2 == rocks3 && rocks2 < rocks1) {
     cout << player2 << " and " << player3 << " are tied for second place!" << endl;
   }
-
-  //third place
+  
   if (rocks1 < rocks2 && rocks1 < rocks3) {
     cout << player1 << " is in third place!" << endl;
   }else if (rocks2 < rocks1 && rocks2 < rocks3) {
@@ -108,7 +107,7 @@ int main() {
   
   //calculations for rock average as double
   cout << fixed << setprecision(2);
-  double avgRocks = (rocks1 + rocks2 + rocks3) / NUM_PLAYERS;
+  double avgRocks = (static_cast<double>(rocks1 + rocks2 + rocks3) / NUM_PLAYERS);
   cout << "\nThe average number of rocks collected by the top three players " 
   "is " << avgRocks << " rocks!" << endl;
 
