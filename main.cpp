@@ -85,12 +85,15 @@ int main() {
   //2nd place ties
   else if (rocks1 > rocks2 && rocks2 == rocks3) {
     cout << "\n" << player2 << " and " << player3 << " are tied for second!" << endl;
+    cout << player1 << " is in third place!" << endl;
   }
   else if (rocks2 > rocks1 && rocks3 == rocks1) {
     cout << "\n" << player1 << " and " << player3 << " are tied for second!" << endl;
+    cout << player2 << " is in third place!" << endl;
   }
   else if (rocks3 > rocks1 && rocks1 == rocks2) {
     cout << "\n" << player1 << " and " << player2 << " are tied for second!" << endl;
+    cout << player3 << " is in third place!" << endl;
   }
 
   //regular places
